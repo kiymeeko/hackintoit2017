@@ -1,8 +1,18 @@
+
 $(document).ready(function($){
+  $('#future').hide();
   $('#spendingHabits').on('click', some_function);
   function some_function() {
     $('#chartdiv').fadeToggle();
   }
+  $('#goal').on('click', other_function);
+  function other_function() {
+    $('#chartdiv').hide();
+    $('#future').fadeIn();
+  }
+
+
+
 
 
 
