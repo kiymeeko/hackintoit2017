@@ -14,7 +14,7 @@
   ],
   "content_scripts": [{
     "matches": ["https://www.amazon.com/*"],
-    "js": ["jquery.min.js", "jquery.popupoverlay.js", "why.js"],
+    "js": ["jquery.min.js", "jquery.popupoverlay.js", "why.js", "popup.js"],
     "run_at": "document_end"
   }],
   "browser_action": {
@@ -23,7 +23,8 @@
     "default_popup": "popup.html"
   },
   "background": {
-    "scripts": ["background.js"],
+    "scripts": ["jquery.min.js", "background.js"],
     "persistent": false
   }
+
 }

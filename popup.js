@@ -1,6 +1,10 @@
-$(document).ready(function() {
-  $('label').click(function() {
-    $('label').removeClass('active');
-    $(this).addClass('active');
-  });
+jQuery(document).ready(function($){
+  $('#goal').on('click', other_function());
+  console.log($('#goal').id)
+  function other_function() {
+    console.log("yes")
+  }
+  function some_function() {
+    $('#Mountain View').style.visibility = "hidden";
+  }
 });

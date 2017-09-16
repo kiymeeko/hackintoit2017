@@ -17,10 +17,10 @@ function modalCode() {
     <p>According to your past purchases, you may not value this decision in the future.</p>
     <button class="proceedAnyway proceedButton" style="background-color: #af3630;">Proceed To Purchase Anyway</button>
   </div>
-  
-  
+
+
 </div>
-    
+
   </div>
 `;
 }
@@ -29,7 +29,7 @@ function modalCss() {
   //noinspection JSAnnotator
   return `input[type=text], select, textarea {
     width: 100%; /* Full width */
-    padding: 12px; /* Some padding */  
+    padding: 12px; /* Some padding */
     border: 1px solid #ccc; /* Gray border */
     border-radius: 4px; /* Rounded borders */
     box-sizing: border-box; /* Make sure that padding and width stays in place */
@@ -52,7 +52,7 @@ function modalCss() {
     font-size: 3em;
     padding: 0 3em 1em 3em;
     margin: auto;
-    
+
 }
 
 /* When moving the mouse over the submit button, add a darker green color */
@@ -141,3 +141,6 @@ window.onload = function() {
     $('.' + wrapClassName).click(onCheckout);
 };
 
+function fade() {
+  document.getElementById("div1").visibility = "hidden";
+}
