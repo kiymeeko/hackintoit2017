@@ -1,11 +1,24 @@
 <?php
-  $stars = $_POST['star'] ?? 0;
-  $response = $_POST['text'] ?? "";
-  $whyid = $_POST['whyid'] ?? 0;
+  $response = $_POST['response'] ?? "";
   $db = new SQLite3('responses.db');
+
   $date = time();
-  $rand = mt_rand() / mt_getrandmax();
-  $cmd = "insert into why values ($date, '$response', $rand)";
+
+  $root = realpath($_SERVER["DOCUMENT_ROOT"]);
+
+  $program_path = $root . "/neuralnet/program.py";
+
+  $filename = uniqid("input_");
+
+  $path = $root . "/neuralnet/" . $filename;
+
+  file_put_contents($path, trim($response));
+  system("python $program_path $path", $retval);
+  $output = trim(file_get_contents($path . ".out"));
+
+  unlink($path);
+  unlink($path . '.out');
+
+  $cmd = "insert into why (date, response, nnval) values ($date, '$response', $output)";
   $db->exec($cmd);
-  print($stars);
-  print($response);
+  print($output);
