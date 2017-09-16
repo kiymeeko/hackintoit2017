@@ -14,7 +14,7 @@ function modalCode() {
     <button class="proceed proceedButton">Proceed To Purchase</button>
   </form>
   <div id="shouldnot" style="display: none">
-    <p>According to your past purchases, this reason is likely to lead to a not-worth purchase.</p>
+    <p>According to your past purchases, you may not value this decision in the future.</p>
     <button class="proceedAnyway proceedButton" style="background-color: #af3630;">Proceed To Purchase Anyway</button>
   </div>
   
@@ -73,7 +73,9 @@ input[type=submit]:hover {
 $('body').append(modalCode());
 $('head').append("<style>" + modalCss() + "</style>");
 
+var shouldAllowCheckout = false;
 function clickToCheckout() {
+  shouldAllowCheckout = true;
   $('.why_popup_close').trigger('click');
   setTimeout(function() {
     $('input[name=proceedToCheckout]').click();
@@ -119,8 +121,14 @@ const elementsToRunPopupOn = [
 
 const wrapClassName = 'asdfghjklqwertyuiop';
 
+
 function onCheckout(event) {
+    if (shouldAllowCheckout) {
+      return;
+    }
     event.preventDefault();
+  $('#whyform').show();
+  $('#shouldnot').hide();
     $('.why_popup_open').click();
     checkoutButton = this;
     console.log('running');
@@ -130,6 +138,6 @@ window.onload = function() {
     for (var i = 0; i < elementsToRunPopupOn.length; i++) {
         $(elementsToRunPopupOn[i]).wrap("<div class='" + wrapClassName + "'></div>");
     }
-    $('.' + wrapClassName).one('click', onCheckout);
+    $('.' + wrapClassName).click(onCheckout);
 };
 
