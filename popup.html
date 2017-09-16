@@ -5,11 +5,25 @@
     <script type="text/javascript" src="jquery.min.js"></script>
     <script type="text/javascript" src="popup.js"></script>
     <link href="future.css" rel="stylesheet" type="text/css" />
+
+      <script src="graphjs/amcharts.js"></script>
+      <script src="graphjs/serial.js"></script>
+      <script src="graphjs/export.min.js"></script>
+      <link rel="stylesheet" href="graphjs/export.css" type="text/css" media="all" />
+      <script src="graphjs/light.js"></script>
+
+      <style>
+          #chartdiv {
+              width		: 100%;
+              height		: 500px;
+              font-size	: 11px;
+          }
+      </style>
   </head>
   <body>
     <h1>Financial Advisor</h1>
     <h3>What can we do for you today?</h3>
-  <img src="pic_mountain.jpg" id="Mountain View" style="width:304px;height:228px;">
+  <img src="pic_mountain.jpg" id="mtn-view" style="width:304px;height:228px;">
   <div class = "welcome">
     <div class = "button-group">
       <button type = "button" id = "goal"> Goal</button>
@@ -18,7 +32,9 @@
 
   </div>
 
-  <div class = "future" style = "visibility: hidden"> <h2>How was your purchase</h2>
+    <div id="chartdiv"></div>
+
+    <div class = "future" style = "visibility: hidden"> <h2>How was your purchase</h2>
     <form action="http://localhost:8000/postbuy.php" method="POST">
       <!-- access stars by request.form['star']
       //access text by request.form['text'] -->
