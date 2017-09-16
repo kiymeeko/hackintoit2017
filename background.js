@@ -20,4 +20,4 @@ chrome.runtime.onMessage.addListener(function(request, sender, callback) {
   }
 });
 
-chrome.tabs.create({url: "/app/page.html"});
+chrome.tabs.create({url: "/app/firsttime.html"});
