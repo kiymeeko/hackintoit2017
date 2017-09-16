@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Financial Advisor</title>
+    <script src="popup.js"></script>
+    <link href="future.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <h1>Financial Advisor</h1>
+      <h2>How was your purchase</h2>
+      <form action="." method="POST">
+        <!-- access stars by request.form['star']
+        //access text by request.form['text'] -->
+        <div class="rating">
+           <input id="star5" name="star" type="radio" value="5" class="radio-btn hide" />
+           <label for="star5">&#9734</label>
+           <input id="star4" name="star" type="radio" value="4" class="radio-btn hide" />
+           <label for="star4">&#9734</label>
+           <input id="star3" name="star" type="radio" value="3" class="radio-btn hide" />
+           <label for="star3">&#9734</label>
+           <input id="star2" name="star" type="radio" value="2" class="radio-btn hide" />
+           <label for="star2">&#9734</label>
+           <input id="star1" name="star" type="radio" value="1" class="radio-btn hide" />
+           <label for="star1">&#9734</label>
+           <div class="clear"></div>
+         <div class = "ratingText">
+           <input type="text" name="text" style = "width: 300px; height: 100px;" >
+         </div>
+           <input type="submit" name="review" value="Submit">
+      </div>
+    </form>
+  </body>
+</html>
