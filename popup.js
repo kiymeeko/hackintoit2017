@@ -1,9 +1,12 @@
 $(document).ready(function($){
   $('#spendingHabits').on('click', some_function);
-  console.log($('#spendingHabits').id);
   function some_function() {
     $('#chartdiv').fadeToggle();
   }
+
+
+
+
 
   var chart = AmCharts.makeChart( "chartdiv", {
     "type": "serial",
@@ -55,4 +58,13 @@ $(document).ready(function($){
     }
 
   } );
+
+  $('head style[type="text/css"]').attr('type', 'text/less');
+  less.refreshStyles();
+  window.randomize = function() {
+  	$('.radial-progress').attr('data-progress', Math.floor(35));
+  }
+  setTimeout(window.randomize, 200);
+  $('.radial-progress').click(window.randomize);
+
 });
