@@ -32,19 +32,19 @@
           var elem = document.getElementById("goalz");
           elem.style.left = 100 + 'px';
           var progress = document.getElementById("progress");
-          const maxWidth = 100;
+          const maxWidth = 40;
           var width = 0;
           var id = setInterval(frame, 1);
           function frame() {
             if (width >= maxWidth) {
               clearInterval(id);
             } else {
-              width += 0.15;
+              width += 0.2;
               elem.style.width = width + '%';
               elem.innerHTML = width * 1 + '%';
-              progress.innerHTML = 'rip';
+              progress.innerHTML = 'You are ' + maxWidth + '% of the way to your goal!!';
               console.log("left", elem.style.left, "right", elem.style.width);
-              progress.style.left = elem.style.left + (maxWidth * 11 + 'px'); // /100*1000
+              progress.style.left = 100 + maxWidth * 13; // elem.left + maxWidth/100 * elem.picture.width
             }
           }
       });
