@@ -37,7 +37,7 @@ def main(pathname):
             word = tokens[0].lower()
             exclude = set(string.punctuation)
             item = ''.join(ch for ch in item if ch not in exclude)
-            word_to_num[item = int(tokens[1])
+            word_to_num[item] = int(tokens[1])
 
     X_input = [[word_to_num[i.lower()] for i in reason]]
     X_input = sequence.pad_sequences(X_input, 12)
