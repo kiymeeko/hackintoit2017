@@ -10,13 +10,17 @@
 
   "permissions": [
     "http://*/*",
-    "https://*/*"
+    "https://*/*",
+    "tabs"
   ],
   "content_scripts": [{
     "matches": ["https://www.amazon.com/*"],
     "js": ["jquery.min.js", "jquery.popupoverlay.js", "why.js", "popup.js"],
     "run_at": "document_end"
   }],
+  "chrome_url_overrides" : {
+    "newtab": "app/page.html"
+  },
   "browser_action": {
     "default_title": "This is a test",
     "default_icon": "icon.png",
