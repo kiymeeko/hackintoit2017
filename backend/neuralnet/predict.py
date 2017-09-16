@@ -34,7 +34,10 @@ def main(pathname):
         lines = f.readlines()
         for line in lines:
             tokens = line.split()
-            word_to_num[tokens[0].lower()] = int(tokens[1])
+            word = tokens[0].lower()
+            exclude = set(string.punctuation)
+            item = ''.join(ch for ch in item if ch not in exclude)
+            word_to_num[item = int(tokens[1])
 
     X_input = [[word_to_num[i.lower()] for i in reason]]
     X_input = sequence.pad_sequences(X_input, 12)
