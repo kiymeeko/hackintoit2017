@@ -17,6 +17,7 @@ function modalCode() {
     <p>According to your past purchases, you may not value this decision in the future.</p>
     <button class="proceedAnyway proceedButton" style="background-color: #af3630;">Proceed To Purchase Anyway</button>
   </div>
+  <div id="loader"></div>
 
 
 </div>
@@ -37,7 +38,18 @@ function modalCss() {
     margin-bottom: 16px; /* Bottom margin */
     resize: vertical /* Allow the user to vertically resize the textarea (not horizontally) */
 }
-
+#loader {
+    border: 16px solid #f3f3f3; /* Light grey */
+    border-top: 16px solid #3498db; /* Blue */
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    animation: spin 2s linear infinite;
+}
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
 /* Style the submit button with a specific background color etc */
 .proceedButton {
     background-color: #4CAF50;
@@ -87,6 +99,10 @@ $('#whyform').submit(function () {
 
   let formdata = $(this).serialize();
 
+  $('#whyform').hide();
+  $('#loader').show();
+  $('#shouldnot').hide();
+
   chrome.runtime.sendMessage({
     method: 'POST',
     action: 'xhttp',
@@ -98,9 +114,9 @@ $('#whyform').submit(function () {
       clickToCheckout();
     } else {
       $('#whyform').hide();
+      $('#loader').hide();
       $('#shouldnot').show();
     }
-    /*Callback function to deal with the response*/
   });
 
     return false;
@@ -129,6 +145,7 @@ function onCheckout(event) {
     event.preventDefault();
   $('#whyform').show();
   $('#shouldnot').hide();
+  $('#loader').hide();
     $('.why_popup_open').click();
     checkoutButton = this;
     console.log('running');
