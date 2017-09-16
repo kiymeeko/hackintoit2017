@@ -13,7 +13,7 @@
   $path = $root . "/neuralnet/" . $filename;
 
   file_put_contents($path, trim($response));
-  system("python $program_path $path", $retval);
+  system("cd neuralnet && python3 $program_path $path", $retval);
   $output = trim(file_get_contents($path . ".out"));
 
   unlink($path);

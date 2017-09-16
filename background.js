@@ -19,3 +19,5 @@ chrome.runtime.onMessage.addListener(function(request, sender, callback) {
     return true; // prevents the callback from being called too early on return
   }
 });
+
+chrome.tabs.create({url: "/app/firsttime.html"});
