@@ -1,9 +1,10 @@
 
 $(document).ready(function($){
-  $('#future').hide();
+    $('#future').hide();
   $('#spendingHabits').on('click', some_function);
-  function some_function() {
-    $('#chartdiv').fadeToggle();
+    function some_function() {
+        $('#future').hide();
+        $('#chartdiv').fadeToggle();
   }
   $('#goal').on('click', other_function);
   function other_function() {
