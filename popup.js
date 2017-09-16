@@ -1,53 +1,29 @@
 $(document).ready(function($){
-  $('#goal').on('click', some_function);
-  console.log($('#goal').id);
+  $('#spendingHabits').on('click', some_function);
+  console.log($('#spendingHabits').id);
   function some_function() {
-    $('#mtn-view').fadeToggle();
+    $('#chartdiv').fadeToggle();
   }
 
   var chart = AmCharts.makeChart( "chartdiv", {
     "type": "serial",
     "theme": "light",
     "dataProvider": [ {
-      "country": "USA",
-      "visits": 2025
+      "country": "Food",
+      "visits": 25
     }, {
-      "country": "China",
-      "visits": 1882
+      "country": "Clothing",
+      "visits": 32
     }, {
-      "country": "Japan",
-      "visits": 1809
+      "country": "Electronics",
+      "visits": 13
     }, {
-      "country": "Germany",
-      "visits": 1322
+      "country": "Kitchen",
+      "visits": 13
     }, {
-      "country": "UK",
-      "visits": 1122
-    }, {
-      "country": "France",
-      "visits": 1114
-    }, {
-      "country": "India",
-      "visits": 984
-    }, {
-      "country": "Spain",
-      "visits": 711
-    }, {
-      "country": "Netherlands",
-      "visits": 665
-    }, {
-      "country": "Russia",
-      "visits": 580
-    }, {
-      "country": "South Korea",
-      "visits": 443
-    }, {
-      "country": "Canada",
-      "visits": 441
-    }, {
-      "country": "Brazil",
-      "visits": 395
-    } ],
+      "country": "Other",
+      "visits": 17
+    }],
     "valueAxes": [ {
       "gridColor": "#FFFFFF",
       "gridAlpha": 0.2,
@@ -80,5 +56,3 @@ $(document).ready(function($){
 
   } );
 });
-
-
