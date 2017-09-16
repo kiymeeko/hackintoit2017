@@ -6,7 +6,7 @@
 
   $root = realpath($_SERVER["DOCUMENT_ROOT"]);
 
-  $program_path = $root . "/neuralnet/program.py";
+  $program_path = $root . "/predict.py";
 
   $filename = uniqid("input_");
 
