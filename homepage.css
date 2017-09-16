@@ -1,0 +1,11 @@
+#goalz {
+  height: 100%;
+  color: transparent;
+  position: absolute;
+  left: 100px;
+}
+
+#progress {
+  position: absolute;
+  left: 500px;
+}
