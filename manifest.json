@@ -14,7 +14,7 @@
   ],
   "content_scripts": [{
     "matches": ["https://www.amazon.com/*"],
-    "js": ["why.js", "jquery.min.js", "jquery.popupoverlay.js"],
+    "js": ["jquery.min.js", "jquery.popupoverlay.js", "why.js"],
     "run_at": "document_end"
   }],
   "browser_action": {
