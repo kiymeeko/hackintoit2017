@@ -6,14 +6,14 @@
 
   $root = realpath($_SERVER["DOCUMENT_ROOT"]);
 
-  $program_path = $root . "/predict.py";
+  $program_path = $root . "/neuralnet/program.py";
 
   $filename = uniqid("input_");
 
   $path = $root . "/neuralnet/" . $filename;
 
   file_put_contents($path, trim($response));
-  system("python $program_path $path", $retval);
+  system("cd neuralnet && python3 $program_path $path", $retval);
   $output = trim(file_get_contents($path . ".out"));
 
   unlink($path);
