@@ -36,7 +36,7 @@ def main(pathname):
             tokens = line.split()
             word = tokens[0].lower()
             exclude = set(string.punctuation)
-            item = ''.join(ch for ch in item if ch not in exclude)
+            item = ''.join(ch for ch in word if ch not in exclude)
             word_to_num[item] = int(tokens[1])
 
     X_input = [[word_to_num[i.lower()] for i in reason]]
@@ -47,3 +47,5 @@ def main(pathname):
         return 1
     else:
         return 0
+
+main("reason.txt")
